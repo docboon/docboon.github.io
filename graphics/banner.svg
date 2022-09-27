@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg826"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="banner.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview828"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1"
+     inkscape:cx="397"
+     inkscape:cy="561"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs823" />
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:46.7296px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#fe5000;fill-opacity:1;stroke:#fe5000;stroke-width:2.61744;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="144.60217"
+       y="134.63123"
+       id="text3488"
+       transform="scale(1.0026123,0.99739451)"
+       inkscape:export-filename="/home/chunxin/docboon/website/docbook-website-2.6.0/docboon-website/graphics/icons/docboon-16x16.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3486"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:46.7296px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#fe5000;fill-opacity:1;stroke:#fe5000;stroke-width:2.61744;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         x="144.60217"
+         y="134.63123">D</tspan></text>
+    <rect
+       style="fill:#fe5000;fill-opacity:1;stroke:#fe5000;stroke-width:0.271763"
+       id="rect10623"
+       width="47.353237"
+       height="14.809487"
+       x="51.877293"
+       y="143.52208"
+       ry="0.93364"
+       inkscape:export-filename="/home/chunxin/docboon/website/docbook-website-2.6.0/docboon-website/graphics/homebanner.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#101820;fill-opacity:1;stroke:#fe5000;stroke-width:0.231142"
+       id="rect10623-3"
+       width="32.428364"
+       height="15.643859"
+       x="77.65696"
+       y="205.53384"
+       ry="0.98624164" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.284px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#feffff;fill-opacity:1;stroke:none;stroke-width:0.3071"
+       x="54.610622"
+       y="154.78397"
+       id="text1868"
+       inkscape:export-filename="/home/chunxin/docboon/website/docbook-website-2.6.0/docboon-website/graphics/homebanner.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan1866"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.284px;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#feffff;fill-opacity:1;stroke-width:0.3071"
+         x="54.610622"
+         y="154.78397">docboon</tspan></text>
+  </g>
+</svg>

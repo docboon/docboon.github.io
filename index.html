@@ -3,84 +3,10 @@
    <meta name="generator" content="Website XSL Stylesheet V2.6.0"><link rel="stylesheet" href="themes/default/style/style.css" type="text/css"><link rel="next" href="what.html" title="What"><link rel="icon" href="graphics/icons/d-icon16.png" type="image/png"><link rel="stylesheet" href="example.css" type="text/css">
 <title>Welcome to docboon</title>
 
-<meta name="keyword" content="docboon, XML, DocBook, Website">
-</head><body class="website"><div class="webpage"><a name="home"></a><div class="navhead"><img border="0" src="graphics/homebanner.png" alt="Home Banner"> | <a href="what.html">What</a> | <a href="how.html">How</a> | <a href="who.html">Who</a> | <a href="building.html">Building</a> | <a href="http://lognovel.com/">lognovel.com</a><br><hr></div><h1>Welcome to docboon</h1><p><span class="emphasis"><em>docboon</em></span> = <span class="emphasis"><em>doc</em></span>ument + <span class="emphasis"><em>boon</em></span>&#65292;&#24847;&#20026;&#23545;&#25991;&#26723;&#26377;&#24847;&#20041;&#30340;&#19996;&#35199;&#12290;&#22312;&#22810;&#24180;&#30340;&#25991;&#26723;&#25776;&#20889;&#12289;&#21457;&#24067;&#21644;&#31649;&#29702;&#30340;&#36807;&#31243;&#20013;&#65292;&#25105;&#20204;&#31215;&#32047;&#20102;&#19968;&#28857;&#24494;&#19981;&#36275;&#36947;&#30340;&#32463;&#39564;&#12290;&#25105;&#20204;&#36890;&#36807;&#36825;&#20010;&#23567;&#23567;&#30340;&#31449;&#28857;&#23558;&#36825;&#20123;&#32463;&#39564;&#20998;&#20139;&#32473;&#21487;&#33021;&#38656;&#35201;&#30340;&#20154;&#20204;&#12290;</p><p>No page can occur in more than one location in the
-navigational hierarchy of the website. Note, however, that you can have
-pages, such as the <a href="about.html">about page</a>,
-that don't appear in the navigational hierarchy at all.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in; &#xA;  "><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[&#27880;&#24847;]" src="themes/default/admon/note.png"></td><th align="left">&#27880;&#24847;</th></tr><tr><td align="left" valign="top">
-  <p>Though this "site" remains a good example of a Website
-  instance, the how-to information here is no longer actively
-  maintained. For more up-to-date information, see the <a class="ulink" href="http://sagehill.net/docbookxsl/Website.html" target="_top">Website</a>
-  chapter in Bob Stayton's book <a class="ulink" href="http://sagehill.net/book-description.html" target="_top">DocBook XSL: The
-  Complete Guide</a>.</p>
-</td></tr></table></div><p>Both <a class="ulink" href="index.html" target="_top">tabular</a> and <a class="ulink" href="n-index.html" target="_top">non-tabular</a> versions are available,
-demonstrating how multiple presentations can be derived from the same
-sources.</p><ul class="toc"><li><a href="what.html">What</a>--docboon&#26159;&#24178;&#20160;&#20040;&#30340;&#65311;</li><li><a href="how.html">How</a>--Linking across Pages</li><li><a href="who.html">Who</a>--Stylesheet customization instructions</li><li><a href="building.html">Building the HTML Pages</a>--Building strategies</li><li><a href="http://lognovel.com/">lognovel.com</a></li></ul><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d7e51"></a>1.&nbsp;What is a Website?</h2></div></div></div>
-
-<p>A website is a collection of pages organized, for the purposes of
-navigation, into one or more hierarchies. In Website, each page is a
-separate XML document authored according to the Website schema/DTD, a customization
-of <a class="ulink" href="http://www.oasis-open.org/docbook/" target="_top">DocBook</a>.</p>
-
-<p>Website imposes the following additional constraints:</p>
-
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Each <code class="sgmltag-element">webpage</code> must have an ID and
-the IDs must be unique across the entire website.</p>
-</li><li class="listitem"><p>No page can occur in more than one location in the
-navigational hierarchy of the website. Note, however, that you can have
-pages, such as the <a href="about.html">about page</a>,
-that don't appear in the navigational hierarchy at all.</p>
-</li></ul></div>
-</div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d7e83"></a>2.&nbsp;Requirements</h2></div></div></div>
-
-<p>In order to build a website with DocBook Website, you must have,
-at a minimum:</p>
-
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The Website DTD (either
-<code class="filename">website.dtd</code> or
-<code class="filename">website-full.dtd</code>) OR the Website RELAX NG schema
-(<code class="filename">website.rnc</code> or
-<code class="filename">website-full.rnc</code>).</p></li><li class="listitem"><p>The <a class="ulink" href="http://www.oasis-open.org/docbook/xml/4.4/" target="_top">DocBook XML
-V4.4</a> DTD (if you want to use
-<code class="filename">website-full.dtd</code>).</p></li><li class="listitem"><p>The Website XSL stylesheets.</p></li><li class="listitem"><p>The <a class="ulink" href="http://docbook.sourceforge.net/release/xsl/" target="_top">DocBook XSL
-Stylesheets</a> (which are imported by the Website XSL
-stylesheets).</p>
-</li><li class="listitem"><p>An XSLT engine such as Saxon or xsltproc.
-</p></li></ul></div>
-
-</div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d7e135"></a>3.&nbsp;Changes from Website 1.x</h2></div></div></div>
-
-<p>I've completely redesigned the way the Website doctype works for
-V2. In version 1, all of the pages in a website were part of a single,
-monolithic XML document.</p>
-
-<p>Making all of the pages part of a single document had a number
-of drawbacks:</p>
-
-<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>It wasn't convenient to update only part of a website
-(only the pages that had been changed, for example).
-</p></li><li class="listitem"><p>For very large websites, there were memory issues associated
-with parsing and formatting the whole thing.
-</p></li><li class="listitem"><p>There was no practical way to publish the XML content of
-a site.
-</p></li><li class="listitem"><p>It was difficult to share pages across different web sites.
-</p></li><li class="listitem"><p>It was very tedious to setup a system that allowed
-the same content to be published
-with different navigational hierarchies.
-</p></li></ol></div>
-
-<p>Website overcomes all of these difficulties.</p>
-
-<p>In fairness, the old style had some advantages:</p>
-
-<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>There was only a single source document to maintain.
-</p></li><li class="listitem"><p>Navigation was derived automatically from the structure
-of the source document.
-</p></li><li class="listitem"><p>Link checking was cheap and easy.
-</p></li></ol></div>
-</div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="whatsnew"></a>4.&nbsp;What's New</h2></div></div></div>
-
-<div class="variablelist"><dl class="variablelist"><dt><span class="term">20 Mar 2001</span></dt><dd>
-<p>Reworked using the Website paradigm.</p>
-</dd></dl></div>
-</div><div class="navfoot"><hr><table width="100%" border="0" summary="Footer navigation"><tr><td width="33%" align="left"><span class="footdate">$Date: 2005/04/08 12:11:57 $</span></td><td width="34%" align="center"><span class="foothome"><a href="about.html">About...</a></span></td><td width="33%" align="right">&nbsp;</td></tr><tr><td colspan="3" align="right"><span class="footcopy"><span class="copyright">&#29256;&#26435; &copy; 2021, 2022 docboon. </span></span></td></tr></table></div></div></body></html>
+<meta name="keyword" content="docbook, markdown, gitbook, AsciiDoc, docboon">
+</head><body class="website"><div class="webpage"><a name="home"></a><div class="navhead"><img border="0" src="graphics/homebanner.png" alt="Home Banner"> | <a href="what.html">What</a> | <a href="resources.html">resources</a> | <a href="https://github.com/docboon">docboon@github</a><br><hr></div><h1>Welcome to docboon</h1><p>&#21019;&#20316;&#19968;&#20221;&#39640;&#36136;&#37327;&#25216;&#26415;&#31867;&#25991;&#26723;&#23545;&#24456;&#22810;&#20154;&#26469;&#35828;&#24182;&#19981;&#26159;&#19968;&#20214;&#24456;&#23481;&#26131;&#30340;&#20107;&#24773;&#12290;&#38500;&#20102;&#20445;&#35777;&#20869;&#23481;&#30340;&#23436;&#25972;&#12289;&#35814;&#23613;&#20043;&#22806;&#65292;&#25991;&#26723;&#30340;&#25490;&#29256;&#12289;&#31649;&#29702;&#21450;&#21457;&#34892;&#20063;&#26159;&#25991;&#26723;&#24037;&#31243;&#37325;&#35201;&#30340;&#20869;&#23481;&#12290;&#20197;&#19979;&#30340;&#20960;&#20010;&#38382;&#39064;&#21487;&#33021;&#26159;&#24456;&#22810;&#20154;&#37117;&#26366;&#36935;&#21040;&#36807;&#30340;&#65306;</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">&#22914;&#20309;&#20445;&#35777;&#22810;&#20154;&#21327;&#20316;&#23436;&#25104;&#19968;&#20221;&#25991;&#26723;&#65311;</li><li class="listitem">&#22914;&#20309;&#20445;&#35777;&#25991;&#26723;&#20013;&#30340;&#21508;&#31181;&#20803;&#32032;&#30340;&#26679;&#24335;&#23436;&#20840;&#32479;&#19968;&#65311;&#22914;&#20309;&#20570;&#21040;&#26679;&#24335;&#19982;&#20869;&#23481;&#30340;&#20998;&#31163;&#65311;&#25991;&#26723;&#30340;&#26679;&#24335;&#19968;&#26086;&#30830;&#23450;&#20197;&#21518;&#22914;&#20309;&#22797;&#29992;&#65311;</li><li class="listitem">&#22914;&#20309;&#21516;&#26102;&#21457;&#24067;HTML&#22312;&#32447;&#29256;&#26412;&#21644;PDF&#25171;&#21360;&#29256;&#26412;&#65311;</li><li class="listitem">&#22914;&#20309;&#23545;&#25991;&#26723;&#36827;&#34892;&#29256;&#26412;&#25511;&#21046;&#65311;</li><li class="listitem">... ...</li></ul></div><p><span class="emphasis"><em>docboon</em></span> = <span class="emphasis"><em>doc</em></span>ument + <span class="emphasis"><em>boon</em></span>&#65292;&#24847;&#20026;&#23545;&#25991;&#26723;&#26377;&#24847;&#20041;&#30340;&#19996;&#35199;&#12290;&#36825;&#26159;&#19968;&#20221;&#23567;&#20876;&#23376;&#65292;&#25105;&#20204;&#26399;&#24453;&#37324;&#38754;&#30340;&#20869;&#23481;&#33021;&#22815;&#35299;&#20915;&#19968;&#37096;&#20998;&#25991;&#26723;&#21019;&#20316;&#20013;&#30340;&#38382;&#39064;&#12290;</p><p>docboon&#30340;&#22522;&#30784;&#26159;DocBook&#65292;&#33021;&#22815;&#24110;&#21161;&#25216;&#26415;&#25991;&#26723;&#30340;&#21019;&#20316;&#32773;&#21033;&#29992;<a class="ulink" href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=docbook" target="_top"><span class="emphasis"><em>DocBook</em></span></a>&#36827;&#34892;&#25991;&#26723;&#21019;&#20316;&#12289;&#31649;&#29702;&#21644;&#21457;&#24067;&#12290;&#21487;&#20197;&#22312;&#36825;&#37324;&#19979;&#36733;&#36825;&#20221;&#23567;&#20876;&#23376;&#65306;</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">html&#29256;&#26412;&#65306;<a class="ulink" href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=docbook" target="_top"><span class="emphasis"><em>DocBook</em></span></a></li><li class="listitem">pdf&#29256;&#26412;&#65306;
+    <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><a class="ulink" href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=docbook" target="_top"><span class="emphasis"><em>DocBook</em></span></a></li><li class="listitem"><a class="ulink" href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=docbook" target="_top"><span class="emphasis"><em>DocBook</em></span></a></li></ol></div>
+     
+  </li></ul></div><p><b>&#36825;&#20221;&#25163;&#20876;&#30340;&#20869;&#23481;&#21253;&#21547;&#22914;&#19979;&#20869;&#23481;&#65306;.&nbsp;</b>
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">DocBook&#26159;&#20160;&#20040;&#65311; &#20197;&#21450;DocBook&#19968;&#20010;&#31616;&#21333;&#30340;&#21382;&#21490;&#20171;&#32461;</li><li class="listitem">&#20351;&#29992;DocBook&#26469;&#21019;&#20316;&#12289;&#31649;&#29702;&#21644;&#21457;&#24067;&#25991;&#26723;</li><li class="listitem">&#23450;&#20041;&#33258;&#24049;&#39118;&#26684;&#30340;&#26679;&#24335;&#34920;</li><li class="listitem">&#20851;&#20110;&#23383;&#20307;&#30340;&#19968;&#20123;&#20171;&#32461;</li></ul></div><p>
+</p><div class="navfoot"><hr><table width="100%" border="0" summary="Footer navigation"><tr><td width="33%" align="left"><span class="footdate">$Date: Sep. 21, 2022 $</span></td><td width="34%" align="center"><span class="foothome"><a href="about.html">About...</a></span></td><td width="33%" align="right">&nbsp;</td></tr><tr><td colspan="3" align="right"><span class="footcopy"><span class="copyright">&#29256;&#26435; &copy; 2021, 2022 docboons. </span></span></td></tr></table></div></div></body></html>

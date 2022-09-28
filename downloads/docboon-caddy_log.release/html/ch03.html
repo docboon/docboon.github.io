@@ -1,0 +1,252 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>&#31532;&nbsp;3&nbsp;&#31456;&nbsp;&#37197;&#32622;&#26696;&#20363;&#21450;&#26085;&#24535;&#35299;&#26512;</title><link rel="stylesheet" type="text/css" href="themes/default/style/style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><style type="text/css">
+body { background-image: url('themes/default/style/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="Caddy&#26085;&#24535;&#21442;&#32771;&#25163;&#20876;"><link rel="up" href="index.html" title="Caddy&#26085;&#24535;&#21442;&#32771;&#25163;&#20876;"><link rel="prev" href="ch02s03.html" title="3.&nbsp;&#26684;&#24335;&#65288;Format modules&#65289;"><link rel="next" href="ch03s02.html" title="2.&nbsp;&#21453;&#21521;&#20195;&#29702;&#26381;&#21153;&#22120;"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">&#31532;&nbsp;3&nbsp;&#31456;&nbsp;&#37197;&#32622;&#26696;&#20363;&#21450;&#26085;&#24535;&#35299;&#26512;</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02s03.html"><img src="themes/default/navig/prev.png" alt="&#19978;&#19968;&#39029;"></a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s02.html"><img src="themes/default/navig/next.png" alt="&#19979;&#19968;&#39029;"></a></td></tr></table></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d0e857"></a>&#31532;&nbsp;3&nbsp;&#31456;&nbsp;&#37197;&#32622;&#26696;&#20363;&#21450;&#26085;&#24535;&#35299;&#26512;</h1></div></div></div><div class="toc"><p><b>&#30446;&#24405;</b></p><dl class="toc"><dt><span class="sect1"><a href="ch03.html#d0e892">1. &#38745;&#24577;&#25991;&#20214;&#26381;&#21153;&#22120;</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#d0e895">1.1. &#40664;&#35748;&#24773;&#20917;</a></span></dt><dt><span class="sect2"><a href="ch03.html#d0e949">1.2. console&#26684;&#24335;</a></span></dt><dt><span class="sect2"><a href="ch03.html#d0e992">1.3. json&#26684;&#24335;</a></span></dt><dt><span class="sect2"><a href="ch03.html#d0e1024">1.4. &#26684;&#24335;&#23646;&#24615;&#26696;&#20363;</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03s02.html">2. &#21453;&#21521;&#20195;&#29702;&#26381;&#21153;&#22120;</a></span></dt></dl></div><p>&#20026;&#20102;&#33021;&#26356;&#28165;&#26224;&#22320;&#25551;&#36848;&#65292;&#25105;&#20204;&#22312;&#23616;&#22495;&#32593;&#20013;&#35774;&#31435;&#19968;&#21488;caddy&#26381;&#21153;&#22120;&#65292;&#25105;&#20204;&#31216;&#20026;<span class="emphasis"><em>Server</em></span>&#65292;&#20854;&#20869;&#32593;IP&#22320;&#22336;&#26159;192.168.31.2/24&#65292;&#22806;&#32593;IP&#22320;&#22336;&#26159;192.168.1.2/24&#12290;&#25105;&#20204;&#22312;&#20854;&#19978;&#23433;&#35013;Debian Linux&#65288;V12&#65289;&#12290;&#20351;&#29992;&#22914;&#19979;&#21629;&#20196;&#23433;&#35013;caddy&#65306;</p><pre class="screen">$ sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+$ curl -1sLf 'https://dl.cloudsmith.io/public/caddy/testing/gpg.key' | \
+      sudo tee /etc/apt/trusted.gpg.d/caddy-testing.asc
+$ curl -1sLf 'https://dl.cloudsmith.io/public/caddy/testing/debian.deb.txt' | \
+      sudo tee /etc/apt/sources.list.d/caddy-testing.list
+$ sudo apt update
+$ sudo apt install caddy</pre><p>&#23433;&#35013;&#32467;&#26463;&#21518;&#65292;caddy&#30340;&#37197;&#32622;&#25991;&#20214;&#20301;&#20110;<code class="filename">/etc/caddy</code>&#30446;&#24405;&#19979;&#12290;&#24037;&#20316;&#30446;&#24405;&#20301;&#20110;<code class="filename">/usr/share/caddy</code>&#30446;&#24405;&#19979;&#12290;</p><div class="figure"><a name="d0e875"></a><p class="title"><b>&#22270;&nbsp;3.1.&nbsp;caddy&#26381;&#21153;&#22120;&#32593;&#32476;&#25299;&#25169;&#22270;</b></p><div class="figure-contents"><div><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="200"><tr><td><img src="images/env.png" width="200" alt="caddy&#26381;&#21153;&#22120;&#32593;&#32476;&#25299;&#25169;&#22270;"></td></tr></table></div></div></div><br class="figure-break"><p>&#22312;&#37197;&#32622;&#21644;&#26597;&#30475;caddy&#26085;&#24535;&#36807;&#31243;&#20013;&#20250;&#30896;&#21040;&#24456;&#22810;json&#26684;&#24335;&#30340;&#25991;&#20214;&#65292;&#20026;&#20102;&#33021;&#26356;&#22909;&#30340;&#26597;&#30475;&#36825;&#20123;&#25991;&#20214;&#65292;&#38656;&#35201;&#19968;&#20010;json&#26684;&#24335;&#21270;&#24037;&#20855;<span class="command"><strong>jq</strong></span>&#12290;<span class="command"><strong>jq</strong></span>&#26159;&#19968;&#20010;&#22522;&#20110;&#21629;&#20196;&#34892;&#30340;&#12289;&#36731;&#37327;&#32423;JSON&#25991;&#20214;&#22788;&#29702;&#24037;&#20855;&#12290;&#22312;Debian&#25110;Ubuntu&#19979;&#21487;&#36890;&#36807;<span class="command"><strong>apt-get install jq</strong></span>&#26469;&#23433;&#35013;&#12290;&#20851;&#20110;&#20854;&#26356;&#22810;&#20869;&#23481;&#35831;&#35775;&#38382;&#65306;<a class="link" href="https://stedolan.github.io/jq/" target="_top">https://stedolan.github.io/jq/</a>&#12290;</p><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e892"></a>1.&nbsp;&#38745;&#24577;&#25991;&#20214;&#26381;&#21153;&#22120;</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="d0e895"></a>1.1.&nbsp;&#40664;&#35748;&#24773;&#20917;</h3></div></div></div><p>&#32534;&#36753;<code class="filename">/etc/caddy/Caddyfile</code>&#25991;&#20214;&#65292;&#20869;&#23481;&#22914;&#19979;&#65306;</p><div class="programlistingco"><pre class="programlisting">&nbsp;&nbsp;1 192.168.31.2 {
+&nbsp;&nbsp;2 root * /usr/share/caddy
+&nbsp;&nbsp;3 file_server
+&nbsp;&nbsp;4 log {
+&nbsp;&nbsp;5       output file /var/log/caddy/access.log <span class="co" id="logoutput-co"><img src="themes/default/callouts/1.png" alt="(1)"></span>
+&nbsp;&nbsp;6     }
+&nbsp;&nbsp;7 }</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a name="logoutput"></a><span><img src="themes/default/callouts/1.png" alt="1" border="0"></span></p></td><td valign="top" align="left"><p>&#25351;&#23450;&#26085;&#24535;&#30340;&#36755;&#20986;&#36335;&#24452;&#20026;<code class="filename">/usr/share/caddy/access.log</code>&#12290;</p></td></tr></table></div></div><p>&#22312;&#37197;&#32622;&#25991;&#20214;&#20013;&#27809;&#26377;&#25351;&#23450;&#26085;&#24535;&#30340;&#26684;&#24335;&#65292;&#24403;&#25105;&#20204;&#20174;&#27983;&#35272;&#22120;&#35775;&#38382;<strong class="userinput"><code>https://192.168.31.2/index.html</code></strong>&#26102;&#65292;&#20250;&#20135;&#29983;&#22914;&#19979;&#30340;&#19968;&#26465;&#26085;&#24535;<sub>&#65288;&#20026;&#20102;&#26041;&#20415;&#26174;&#31034;&#21644;&#35828;&#26126;&#65292;&#25105;&#20204;&#23558;&#36825;&#26465;&#26085;&#24535;&#20449;&#24687;&#36827;&#34892;&#20102;&#20998;&#34892;&#22788;&#29702;&#65292;&#23454;&#38469;&#19978;&#19979;&#38754;&#30340;&#26085;&#24535;&#20449;&#24687;&#26159;&#19968;&#26465;&#35760;&#24405;&#65289;</sub>&#65306;</p><div class="programlistingco"><pre class="screen">&nbsp;&nbsp;1 2021/12/29 03:07:44.337<span class="co" id="timestamp-co"><img src="themes/default/callouts/1.png" alt="(1)"></span>   info<span class="co" id="loglevel-co"><img src="themes/default/callouts/2.png" alt="(2)"></span>   http.log.access.log0<span class="co" id="logger-co"><img src="themes/default/callouts/3.png" alt="(3)"></span>    handled request<span class="co" id="message-co"><img src="themes/default/callouts/4.png" alt="(4)"></span> 
+&nbsp;&nbsp;2 {
+&nbsp;&nbsp;3   "request": {
+&nbsp;&nbsp;4     "remote_addr": "192.168.31.56:50946",
+&nbsp;&nbsp;5     "proto": "HTTP/2.0",
+&nbsp;&nbsp;6     "method": "GET",
+&nbsp;&nbsp;7     "host": "192.168.31.2",
+&nbsp;&nbsp;8     "uri": "/index.html",
+&nbsp;&nbsp;9     "headers": {
+&nbsp;10       "Accept-Encoding": ["gzip, deflate, br"],
+&nbsp;11       "Sec-Fetch-Mode": ["navigate"],
+&nbsp;12       "Sec-Fetch-User": ["?1"],
+&nbsp;13       "Sec-Fetch-Dest": ["document"],
+&nbsp;14       "Sec-Ch-Ua-Platform": ["\"Linux\""],
+&nbsp;15       "Upgrade-Insecure-Requests": ["1"],
+&nbsp;16       "User-Agent": ["Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) 
+&nbsp;17                       Chrome/96.0.4664.110 Safari/537.36"],
+&nbsp;18       "Accept": ["text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,
+&nbsp;19                   image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"],
+&nbsp;20       "Sec-Fetch-Site": ["none"],
+&nbsp;21       "Cache-Control": ["max-age=0"],
+&nbsp;22       "Sec-Ch-Ua": ["\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"96\", \"Google Chrome\";
+&nbsp;23                     v=\"96\""],
+&nbsp;24       "Sec-Ch-Ua-Mobile": ["?0"],
+&nbsp;25       "Accept-Language": ["zh-CN,zh;q=0.9"]
+&nbsp;26     },
+&nbsp;27     "tls": {
+&nbsp;28       "resumed": false,
+&nbsp;29       "version": 772,
+&nbsp;30       "cipher_suite": 4867,
+&nbsp;31       "proto": "h2",
+&nbsp;32       "proto_mutual": true,
+&nbsp;33       "server_name": ""
+&nbsp;34     }
+&nbsp;35   },
+&nbsp;36   "common_log": "192.168.31.56 - - [29/Dec/2021:11:07:44 +0800] \"GET /index.html HTTP/2.0\" 
+&nbsp;37                  200 12226",
+&nbsp;38   "user_id": "",
+&nbsp;39   "duration": 0.005571188,
+&nbsp;40   "size": 12226,
+&nbsp;41   "status": 200,
+&nbsp;42   "resp_headers": {
+&nbsp;43     "Accept-Ranges": ["bytes"],
+&nbsp;44     "Content-Length": ["12226"],
+&nbsp;45     "Server": ["Caddy"],
+&nbsp;46     "Etag": ["\"r29u0d9fm\""],
+&nbsp;47     "Content-Type": ["text/html; charset=utf-8"],
+&nbsp;48     "Last-Modified": ["Mon, 08 Nov 2021 20:53:01 GMT"]
+&nbsp;49   }
+&nbsp;50 }</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a name="timestamp"></a><span><img src="themes/default/callouts/1.png" alt="1" border="0"></span></p></td><td valign="top" align="left"><p>&#26102;&#38388;&#25139;&#65292;&#40664;&#35748;&#24773;&#20917;&#19979;&#20351;&#29992;&#20102;wall-milli&#12290;wall&#30340;&#24847;&#24605;&#26159;&#8220;&#22681;&#19978;&#30340;&#38047;&#8221;&#65292;&#21363;&#36825;&#20010;&#26684;&#24335;&#26159;&#25105;&#20204;&#21487;&#20197;&#24456;&#23481;&#26131;&#36776;&#35748;&#30340;&#26684;&#24335;&#65292;milli&#26159;&#27627;&#31186;&#32423;&#30340;&#24847;&#24605;&#65292;&#21363;&#26102;&#38388;&#31934;&#30830;&#21040;&#27627;&#31186;&#65307;</p></td></tr><tr><td width="5%" valign="top" align="left"><p><a name="loglevel"></a><span><img src="themes/default/callouts/2.png" alt="2" border="0"></span></p></td><td valign="top" align="left"><p>&#26085;&#24535;&#30340;level&#65292;&#40664;&#35748;&#24773;&#20917;&#19979;&#26159;info&#65307;</p></td></tr><tr><td width="5%" valign="top" align="left"><p><a name="logger"></a><span><img src="themes/default/callouts/3.png" alt="3" border="0"></span></p></td><td valign="top" align="left"><p>&#20135;&#29983;&#26085;&#24535;&#30340;&#27169;&#22359;&#65307;</p></td></tr><tr><td width="5%" valign="top" align="left"><p><a name="message"></a><span><img src="themes/default/callouts/4.png" alt="4" border="0"></span></p></td><td valign="top" align="left"><p>&#28040;&#24687;&#65288;msg&#65289;&#21517;&#31216;&#12290;</p></td></tr></table></div></div><p>&#19978;&#38754;&#30340;&#22235;&#20010;&#20803;&#32032;&#21253;&#21547;&#22312;&#31532;&#19968;&#34892;&#20013;&#65292;&#21097;&#19979;&#30340;&#20869;&#23481;&#34987;&#23553;&#35013;&#22312;json&#32467;&#26500;&#20013;&#12290;</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="d0e949"></a>1.2.&nbsp;console&#26684;&#24335;</h3></div></div></div><p>&#25105;&#20204;&#25509;&#19979;&#26469;&#26356;&#25913;<code class="filename">Caddyfile</code>&#25991;&#20214;&#65292;&#20351;&#29992;<span class="command"><strong>console</strong></span>&#30340;&#26684;&#24335;&#26469;&#23553;&#35013;&#26085;&#24535;&#20449;&#24687;&#65292;&#24182;&#20351;&#29992;<span class="command"><strong>caddy run</strong></span>&#21629;&#20196;&#26469;&#37325;&#26032;&#36816;&#34892;caddy&#65306;</p><div class="programlistingco"><pre class="programlisting">&nbsp;&nbsp;1 192.168.31.2 {
+&nbsp;&nbsp;2 root * /usr/share/caddy
+&nbsp;&nbsp;3 file_server
+&nbsp;&nbsp;4 log {
+&nbsp;&nbsp;5       output file /var/log/caddy/access.log
+&nbsp;&nbsp;6       format console<span class="co" id="LogOutputConsole-co"><img src="themes/default/callouts/1.png" alt="(1)"></span>
+&nbsp;&nbsp;7     }
+&nbsp;&nbsp;8 }</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a name="LogOutputConsole"></a><span><img src="themes/default/callouts/1.png" alt="1" border="0"></span></p></td><td valign="top" align="left"><p>&#25351;&#23450;&#26085;&#24535;&#26684;&#24335;&#26159;<span class="command"><strong>console</strong></span>&#12290;</p></td></tr></table></div></div><div class="programlistingco"><pre class="screen">&nbsp;&nbsp;1 1.6407473377283428e+09<span class="co" id="ConsoleTimestamp-co"><img src="themes/default/callouts/1.png" alt="(1)"></span>	info	http.log.access.log0	handled request
+&nbsp;&nbsp;2 {
+&nbsp;&nbsp;3   "request": {
+&nbsp;&nbsp;4     "remote_addr": "192.168.31.56:50950",
+&nbsp;&nbsp;5     "proto": "HTTP/2.0",
+&nbsp;&nbsp;6     "method": "GET",
+&nbsp;&nbsp;7     "host": "192.168.31.34",
+&nbsp;&nbsp;8     "uri": "/index.html",
+&nbsp;&nbsp;9     "headers": {
+&nbsp;10       "Accept-Encoding": ["gzip, deflate, br"],
+&nbsp;11       "Cache-Control": ["max-age=0"],
+&nbsp;12       "Sec-Ch-Ua": ["\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"96\", \"Google Chrome\";
+&nbsp;13                     v=\"96\""],
+&nbsp;14       "Sec-Ch-Ua-Platform": ["\"Linux\""],
+&nbsp;15       "User-Agent": ["Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) 
+&nbsp;16                       Chrome/96.0.4664.110 Safari/537.36"],
+&nbsp;17       "Sec-Fetch-Mode": ["navigate"],
+&nbsp;18       "Sec-Fetch-Dest": ["document"],
+&nbsp;19       "Accept-Language": ["zh-CN,zh;q=0.9"],
+&nbsp;20       "Sec-Ch-Ua-Mobile": ["?0"],
+&nbsp;21       "Upgrade-Insecure-Requests": ["1"],
+&nbsp;22       "Accept": ["text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,
+&nbsp;23          image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"],
+&nbsp;24       "Sec-Fetch-Site": ["none"],
+&nbsp;25       "Sec-Fetch-User": ["?1"]
+&nbsp;26     },
+&nbsp;27     "tls": {
+&nbsp;28       "resumed": false,
+&nbsp;29       "version": 772,
+&nbsp;30       "cipher_suite": 4867,
+&nbsp;31       "proto": "h2",
+&nbsp;32       "proto_mutual": true,
+&nbsp;33       "server_name": ""
+&nbsp;34     }
+&nbsp;35   },
+&nbsp;36   "common_log": "192.168.31.56 - - [29/Dec/2021:11:08:57 +0800] \"GET /index.html HTTP/2.0\" 
+&nbsp;37                  200 12226",
+&nbsp;38   "user_id": "",
+&nbsp;39   "duration": 0.00506029,
+&nbsp;40   "size": 12226,
+&nbsp;41   "status": 200,
+&nbsp;42   "resp_headers": {
+&nbsp;43     "Last-Modified": ["Mon, 08 Nov 2021 20:53:01 GMT"],
+&nbsp;44     "Accept-Ranges": ["bytes"],
+&nbsp;45     "Content-Length": ["12226"],
+&nbsp;46     "Server": ["Caddy"],
+&nbsp;47     "Etag": ["\"r29u0d9fm\""],
+&nbsp;48     "Content-Type": ["text/html; charset=utf-8"]
+&nbsp;49   }
+&nbsp;50 }</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a name="ConsoleTimestamp"></a><span><img src="themes/default/callouts/1.png" alt="1" border="0"></span></p></td><td valign="top" align="left"><p>&#26102;&#38388;&#25139;&#65292;<span class="command"><strong>console</strong></span>&#26684;&#24335;&#19979;&#30340;&#26102;&#38388;&#25139;&#21644;&#40664;&#35748;&#24773;&#20917;&#30340;&#26684;&#24335;&#36824;&#26159;&#19981;&#19968;&#26679;&#30340;&#12290;<span class="command"><strong>console</strong></span>&#20351;&#29992;&#20102;unix_milli_float&#31867;&#22411;&#65307;</p></td></tr></table></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="d0e992"></a>1.3.&nbsp;json&#26684;&#24335;</h3></div></div></div><p>&#25105;&#20204;&#25509;&#19979;&#26469;&#26356;&#25913;<code class="filename">Caddyfile</code>&#25991;&#20214;&#65292;&#20351;&#29992;<span class="command"><strong>json</strong></span>&#30340;&#26684;&#24335;&#26469;&#23553;&#35013;&#26085;&#24535;&#20449;&#24687;&#65292;&#24182;&#20351;&#29992;<span class="command"><strong>caddy run</strong></span>&#21629;&#20196;&#26469;&#37325;&#26032;&#36816;&#34892;caddy&#65306;</p><div class="programlistingco"><pre class="programlisting">&nbsp;&nbsp;1 192.168.31.2 {
+&nbsp;&nbsp;2 root * /usr/local/work/example.com
+&nbsp;&nbsp;3 file_server
+&nbsp;&nbsp;4 log {
+&nbsp;&nbsp;5       output file /var/log/caddy/access.log
+&nbsp;&nbsp;6       format json <span class="co" id="LogOutputJson-co"><img src="themes/default/callouts/1.png" alt="(1)"></span>
+&nbsp;&nbsp;7     }
+&nbsp;&nbsp;8 }</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a name="LogOutputJson"></a><span><img src="themes/default/callouts/1.png" alt="1" border="0"></span></p></td><td valign="top" align="left"><p>&#25351;&#23450;&#26085;&#24535;&#26684;&#24335;&#26159;<span class="command"><strong>json</strong></span>&#12290;</p></td></tr></table></div></div><p>&#25152;&#26377;&#30340;&#26085;&#24535;&#20449;&#24687;&#23601;&#34987;&#23553;&#35013;&#25104;&#19968;&#26465;json&#32467;&#26500;&#30340;&#25968;&#25454;&#65306;</p><pre class="screen">&nbsp;&nbsp;1 {
+&nbsp;&nbsp;2   "level": "info",
+&nbsp;&nbsp;3   "ts": 1640751044.7156549,
+&nbsp;&nbsp;4   "logger": "http.log.access.log0",
+&nbsp;&nbsp;5   "msg": "handled request",
+&nbsp;&nbsp;6   "request": {
+&nbsp;&nbsp;7     "remote_addr": "192.168.31.56:50962",
+&nbsp;&nbsp;8     "proto": "HTTP/2.0",
+&nbsp;&nbsp;9     "method": "GET",
+&nbsp;10     "host": "192.168.31.34",
+&nbsp;11     "uri": "/index.html",
+&nbsp;12     "headers": {
+&nbsp;13       "Sec-Ch-Ua-Mobile": ["?0"],
+&nbsp;14       "Upgrade-Insecure-Requests": ["1"],
+&nbsp;15       "User-Agent": ["Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) 
+&nbsp;16                       Chrome/96.0.4664.110 Safari/537.36"],
+&nbsp;17       "Sec-Fetch-Mode": ["navigate"],
+&nbsp;18       "Sec-Fetch-Site": ["none"],
+&nbsp;19       "Sec-Fetch-User": ["?1"],
+&nbsp;20       "Sec-Fetch-Dest": ["document"],
+&nbsp;21       "Accept-Encoding": ["gzip, deflate, br"],
+&nbsp;22       "Cache-Control": ["max-age=0"],
+&nbsp;23       "Sec-Ch-Ua": ["\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"96\", \"Google Chrome\";
+&nbsp;24                     v=\"96\""],
+&nbsp;25       "Sec-Ch-Ua-Platform": ["\"Linux\""],
+&nbsp;26       "Accept": ["text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,
+&nbsp;27                   image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"],
+&nbsp;28       "Accept-Language": ["zh-CN,zh;q=0.9"]
+&nbsp;29     },
+&nbsp;30     "tls": {
+&nbsp;31       "resumed": false,
+&nbsp;32       "version": 772,
+&nbsp;33       "cipher_suite": 4867,
+&nbsp;34       "proto": "h2",
+&nbsp;35       "proto_mutual": true,
+&nbsp;36       "server_name": ""
+&nbsp;37     }
+&nbsp;38   },
+&nbsp;39   "common_log": "192.168.31.56 - - [29/Dec/2021:12:10:44 +0800] \"GET /index.html HTTP/2.0\" 
+&nbsp;40                  200 12239",
+&nbsp;41   "user_id": "",
+&nbsp;42   "duration": 0.000896033,
+&nbsp;43   "size": 12239,
+&nbsp;44   "status": 200,
+&nbsp;45   "resp_headers": {
+&nbsp;46     "Server": ["Caddy"],
+&nbsp;47     "Etag": ["\"r4uzlo9fz\""],
+&nbsp;48     "Content-Type": ["text/html; charset=utf-8"],
+&nbsp;49     "Last-Modified": ["Wed, 29 Dec 2021 04:10:36 GMT"],
+&nbsp;50     "Accept-Ranges": ["bytes"],
+&nbsp;51     "Content-Length": ["12239"]
+&nbsp;52   }
+&nbsp;53 }</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1024"></a>1.4.&nbsp;&#26684;&#24335;&#23646;&#24615;&#26696;&#20363;</h3></div></div></div><p>&#25105;&#20204;&#25509;&#19979;&#26469;&#22312;<code class="filename">Caddyfile</code>&#25991;&#20214;&#20013;&#21152;&#20837;&#26356;&#22810;&#30340;&#23553;&#35013;&#23646;&#24615;&#65292;&#24182;&#20351;&#29992;<span class="command"><strong>caddy run</strong></span>&#21629;&#20196;&#26469;&#37325;&#26032;&#36816;&#34892;caddy&#65306;</p><div class="programlistingco"><pre class="programlisting">&nbsp;&nbsp;1 192.168.31.2 {
+&nbsp;&nbsp;2 root * /usr/share/caddy
+&nbsp;&nbsp;3 file_server
+&nbsp;&nbsp;4 log {
+&nbsp;&nbsp;5       output file /var/log/caddy/access.log
+&nbsp;&nbsp;6       format json { <span class="co" id="LogOutputJsonProperty-co"><img src="themes/default/callouts/1.png" alt="(1)"></span>
+&nbsp;&nbsp;7           message_key FileServerMSG <span class="co" id="LogOutputJsonPropertyMsgKey-co"><img src="themes/default/callouts/2.png" alt="(2)"></span>
+&nbsp;&nbsp;8           level_key FileServerLevel<span class="co" id="LogOutputJsonPropertyLevelKey-co"><img src="themes/default/callouts/3.png" alt="(3)"></span>
+&nbsp;&nbsp;9           time_key TimeStamp <span class="co" id="LogOutputJsonPropertyTimeKey-co"><img src="themes/default/callouts/4.png" alt="(4)"></span>
+&nbsp;10           name_key FileServerLogger<span class="co" id="LogOutputJsonPropertyNameKey-co"><img src="themes/default/callouts/5.png" alt="(5)"></span>
+&nbsp;11           time_format unix_seconds_float <span class="co" id="LogOutputJsonPropertyTimeFormat-co"><img src="themes/default/callouts/6.png" alt="(6)"></span>
+&nbsp;12           level_format upper <span class="co" id="LogOutputJsonPropertyLevelFormat-co"><img src="themes/default/callouts/7.png" alt="(7)"></span>
+&nbsp;13       }
+&nbsp;14     }
+&nbsp;15 }</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a name="LogOutputJsonProperty"></a><span><img src="themes/default/callouts/1.png" alt="1" border="0"></span></p></td><td valign="top" align="left"><p>&#25351;&#23450;&#26085;&#24535;&#26684;&#24335;&#26159;<span class="command"><strong>json</strong></span>&#12290;</p></td></tr><tr><td width="5%" valign="top" align="left"><p><a name="LogOutputJsonPropertyMsgKey"></a><span><img src="themes/default/callouts/2.png" alt="2" border="0"></span></p></td><td valign="top" align="left"><p>&#28040;&#24687;&#30340;&#20851;&#38190;&#23383;&#12290;</p></td></tr><tr><td width="5%" valign="top" align="left"><p><a name="LogOutputJsonPropertyLevelKey"></a><span><img src="themes/default/callouts/3.png" alt="3" border="0"></span></p></td><td valign="top" align="left"><p>level&#30340;&#20851;&#38190;&#23383;&#12290;</p></td></tr><tr><td width="5%" valign="top" align="left"><p><a name="LogOutputJsonPropertyTimeKey"></a><span><img src="themes/default/callouts/4.png" alt="4" border="0"></span></p></td><td valign="top" align="left"><p>&#26102;&#38388;&#25139;&#20851;&#38190;&#23383;&#12290;</p></td></tr><tr><td width="5%" valign="top" align="left"><p><a name="LogOutputJsonPropertyNameKey"></a><span><img src="themes/default/callouts/5.png" alt="5" border="0"></span></p></td><td valign="top" align="left"><p>&#21517;&#31216;&#20851;&#38190;&#23383;&#12290;</p></td></tr><tr><td width="5%" valign="top" align="left"><p><a name="LogOutputJsonPropertyTimeFormat"></a><span><img src="themes/default/callouts/6.png" alt="6" border="0"></span></p></td><td valign="top" align="left"><p>&#26102;&#38388;&#26684;&#24335;&#12290;</p></td></tr><tr><td width="5%" valign="top" align="left"><p><a name="LogOutputJsonPropertyLevelFormat"></a><span><img src="themes/default/callouts/7.png" alt="7" border="0"></span></p></td><td valign="top" align="left"><p>level&#26684;&#24335;&#12290;</p></td></tr></table></div></div><p>&#25152;&#26377;&#30340;&#26085;&#24535;&#20449;&#24687;&#23601;&#34987;&#23553;&#35013;&#25104;&#19968;&#26465;json&#32467;&#26500;&#30340;&#25968;&#25454;&#65306;</p><pre class="screen">&nbsp;&nbsp;1 {
+&nbsp;&nbsp;2   "FileServerLevel": "INFO",
+&nbsp;&nbsp;3   "TimeStamp": 1640847492.5563374,
+&nbsp;&nbsp;4   "FileServerLogger": "http.log.access.log0",
+&nbsp;&nbsp;5   "FileServerMSG": "handled request",
+&nbsp;&nbsp;6   "request": {
+&nbsp;&nbsp;7     "remote_addr": "192.168.31.56:39920",
+&nbsp;&nbsp;8     "proto": "HTTP/2.0",
+&nbsp;&nbsp;9     "method": "GET",
+&nbsp;10     "host": "192.168.31.34",
+&nbsp;11     "uri": "/",
+&nbsp;12     "headers": {
+&nbsp;13       "Sec-Ch-Ua": ["\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"96\", \"Google Chrome\";
+&nbsp;14        v=\"96\""],
+&nbsp;15       "Sec-Ch-Ua-Platform": ["\"Linux\""],
+&nbsp;16       "Sec-Fetch-Mode": ["navigate"],
+&nbsp;17       "Accept-Encoding": ["gzip, deflate, br"],
+&nbsp;18       "Sec-Fetch-User": ["?1"],
+&nbsp;19       "Sec-Fetch-Dest": ["document"],
+&nbsp;20       "Cache-Control": ["max-age=0"],
+&nbsp;21       "Sec-Ch-Ua-Mobile": ["?0"],
+&nbsp;22       "Upgrade-Insecure-Requests": ["1"],
+&nbsp;23       "User-Agent": ["Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+&nbsp;24                       Chrome/96.0.4664.110 Safari/537.36"],
+&nbsp;25       "Accept": ["text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,
+&nbsp;26                   image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"],
+&nbsp;27       "Sec-Fetch-Site": ["none"],
+&nbsp;28       "Accept-Language": ["zh-CN,zh;q=0.9"]
+&nbsp;29     },
+&nbsp;30     "tls": {
+&nbsp;31       "resumed": false,
+&nbsp;32       "version": 772,
+&nbsp;33       "cipher_suite": 4867,
+&nbsp;34       "proto": "h2",
+&nbsp;35       "proto_mutual": true,
+&nbsp;36       "server_name": ""
+&nbsp;37     }
+&nbsp;38   },
+&nbsp;39   "common_log": "192.168.31.56 - - [30/Dec/2021:14:58:12 +0800] \"GET / HTTP/2.0\" 200 12239",
+&nbsp;40   "user_id": "",
+&nbsp;41   "duration": 0.005645898,
+&nbsp;42   "size": 12239,
+&nbsp;43   "status": 200,
+&nbsp;44   "resp_headers": {
+&nbsp;45     "Content-Type": ["text/html; charset=utf-8"],
+&nbsp;46     "Last-Modified": ["Wed, 29 Dec 2021 04:10:36 GMT"],
+&nbsp;47     "Accept-Ranges": ["bytes"],
+&nbsp;48     "Content-Length": ["12239"],
+&nbsp;49     "Server": ["Caddy"],
+&nbsp;50     "Etag": ["\"r4uzlo9fz\""]
+&nbsp;51   }
+&nbsp;52 }</pre></div></div></div><div class="navfooter"><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch02s03.html"><img src="themes/default/navig/prev.png" alt="&#19978;&#19968;&#39029;"></a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s02.html"><img src="themes/default/navig/next.png" alt="&#19979;&#19968;&#39029;"></a></td></tr><tr><td width="40%" align="left" valign="top">3.&nbsp;&#26684;&#24335;&#65288;Format modules&#65289;&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="themes/default/navig/home.png" alt="&#36215;&#22987;&#39029;"></a></td><td width="40%" align="right" valign="top">&nbsp;2.&nbsp;&#21453;&#21521;&#20195;&#29702;&#26381;&#21153;&#22120;</td></tr></table></div></body></html>
